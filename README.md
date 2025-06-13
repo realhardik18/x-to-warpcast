@@ -25,11 +25,13 @@ A script to monitor tweets from specified Twitter accounts and automatically cas
    TWEET_ID=comma,separated,twitter,user,ids
    RAPID_API_KEY=your_rapidapi_key
    FARCASTER_MNEMONIC=your_farcaster_mnemonic
+   COOLDOWN_TIME=10
    ```
 
    - `TWEET_ID`: Comma-separated Twitter **user IDs** to monitor (e.g., `44196397,19512238`). **Do not use screen names.**
    - `RAPID_API_KEY`: Your RapidAPI key for the twitter241 API
    - `FARCASTER_MNEMONIC`: Your Farcaster wallet mnemonic
+   - `COOLDOWN_TIME`: Number of seconds to wait between each polling cycle (default: `10`)
 
 ## Usage
 
@@ -44,7 +46,7 @@ The script will:
 - Skip retweets.
 - Cast new tweets to Farcaster using your mnemonic.
 - Store a cache of processed tweets in `tweet_cache.json`.
-- Repeat every 10 seconds.
+- Repeat every `COOLDOWN_TIME` seconds.
 
 ## Notes
 

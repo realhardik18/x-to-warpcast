@@ -139,8 +139,8 @@ def main_loop():
                     cast_to_farcaster(f"{t['tweet_text']}")
             tweet_cache[user_id] = tweets
         save_tweet_cache(tweet_cache)
-        log("Sleeping for 30 seconds...\n")
-        time.sleep(10)
+        log(f"Sleeping for {os.getenv('COOLDOWN_TIME')} seconds...\n")
+        time.sleep(os.getenv('COOLDOWN_TIME'))
 
 if __name__ == "__main__":
     main_loop()
